@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Vitacred Brand Colors */
+    --vitacred-primary: 263 47% 30%; /* #513098 */
+    --vitacred-secondary: 35 70% 63%; /* #E89C55 */
+    --vitacred-accent: 263 54% 67%; /* #937BD6 */
+    --vitacred-light: 252 26% 84%; /* #D1D1E0 */
+    --vitacred-dark: 252 14% 26%; /* #3F3C48 */
+
+    /* Design System */
+    --background: 0 0% 100%;
+    --foreground: var(--vitacred-dark);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--vitacred-dark);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--vitacred-dark);
+
+    --primary: var(--vitacred-primary);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--vitacred-secondary);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: var(--vitacred-light);
+    --muted-foreground: var(--vitacred-dark);
+
+    --accent: var(--vitacred-accent);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--vitacred-light);
+    --input: var(--vitacred-light);
+    --ring: var(--vitacred-primary);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--vitacred-primary)), hsl(var(--vitacred-accent)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--vitacred-secondary)), hsl(35 70% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--vitacred-primary) / 0.9), hsl(var(--vitacred-accent) / 0.8));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--vitacred-primary) / 0.3);
+    --shadow-card: 0 4px 20px hsl(var(--vitacred-primary) / 0.1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: var(--vitacred-dark);
+    --foreground: 0 0% 100%;
+
+    --card: var(--vitacred-dark);
+    --card-foreground: 0 0% 100%;
+
+    --popover: var(--vitacred-dark);
+    --popover-foreground: 0 0% 100%;
+
+    --primary: var(--vitacred-accent);
+    --primary-foreground: var(--vitacred-dark);
+
+    --secondary: var(--vitacred-secondary);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 252 14% 20%;
+    --muted-foreground: var(--vitacred-light);
+
+    --accent: var(--vitacred-accent);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 252 14% 35%;
+    --input: 252 14% 35%;
+    --ring: var(--vitacred-accent);
+  }
+
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer base {
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
