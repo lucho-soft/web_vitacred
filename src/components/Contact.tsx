@@ -42,6 +42,11 @@ const Contact = () => {
       message
     )}`;
 
+    const fbq = (window as any).fbq;
+    if (fbq) {
+      fbq("track", "Lead");
+    }
+
     // Abre WhatsApp en una nueva pestaña
     window.open(url, "_blank");
   };

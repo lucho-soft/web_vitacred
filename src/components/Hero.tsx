@@ -53,12 +53,7 @@ const Hero = () => {
               <Button
                 variant="outline-primary"
                 size="hero"
-                className="min-w-[200px] border-white text-white hover:bg-white hover:text-vitacred-primary"
-                onClick={() => {
-                  document
-                    .getElementById("contacto")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
+                className="min-w-[200px] border-white text-white cursor-default"
               >
                 Simular crédito
               </Button>

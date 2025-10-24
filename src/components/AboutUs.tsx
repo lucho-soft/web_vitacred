@@ -28,7 +28,7 @@ const AboutUs = () => {
             </div>
             
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-elegant border border-vitacred-light">
+            <div className="absolute -bottom-6 -right-2 bg-white p-6 rounded-xl shadow-elegant border border-vitacred-light">
               <div className="text-center">
                 <div className="text-3xl font-bold text-vitacred-primary mb-1">15+</div>
                 <div className="text-sm text-vitacred-dark">Años de experiencia</div>

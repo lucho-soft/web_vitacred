@@ -1,8 +1,9 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
+import React, { useState } from "react";
 import vitacredLogo from "@/assets/logo header.png";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navItems = [
     { name: "Inicio", href: "#inicio" },
     { name: "Nosotros", href: "#nosotros" },
@@ -36,38 +37,56 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="flex items-center space-x-4">
-          <Button
-            variant="cta"
-            size="default"
-            onClick={() => {
-              document
-                .getElementById("contacto")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md border border-border"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            Simula tu préstamo
-          </Button>
-
-          {/* Mobile Menu Button */}
-          <button className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md border border-border">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            {menuOpen ? (
+              // Ícono de cerrar
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              // Ícono de menú
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
                 d="M4 6h16M4 12h16M4 18h16"
               />
-            </svg>
-          </button>
-        </div>
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <nav className="lg:hidden bg-background border-t border-border shadow-md">
+          <ul className="flex flex-col items-center py-4 space-y-4">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className="text-foreground hover:text-primary font-medium"
+                  onClick={() => setMenuOpen(false)} // Cierra el menú al hacer clic
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
